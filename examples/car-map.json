@@ -1,0 +1,1 @@
+{"mode":"car","controller":"neural","algorithm":"map","learning":"none","seed":42,"hidden":16,"population":18,"trainCount":3,"duration":5,"terrain":"rolling","evolveBody":false,"graphBody":false,"conditionVariation":true,"stepBudget":2000000,"bins":10,"axisX":0,"axisY":1}

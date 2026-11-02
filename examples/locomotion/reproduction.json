@@ -1,0 +1,10 @@
+{
+  "format": "jem-pilot-reproduction",
+  "runs": 60,
+  "episodes": 480,
+  "source": "/workspace/scratch/8cdc0405ae25/evolutionary-machines-build3/examples/locomotion-v3-pilot.json",
+  "complete": true,
+  "matched": true,
+  "tolerance": 1e-10,
+  "note": "Stored winners re-evaluated against packaged kernels; all training and held-out episode metrics match."
+}

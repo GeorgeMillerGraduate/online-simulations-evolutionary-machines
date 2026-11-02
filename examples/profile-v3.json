@@ -1,0 +1,21 @@
+{
+  "format": "jem-v3-profile",
+  "runtime": "v24.22.1",
+  "platform": "linux",
+  "architecture": "x64",
+  "cpu": "INTEL(R) XEON(R) PLATINUM 8573C",
+  "logicalCPUs": 9,
+  "concurrency": "single Node process; other workloads may be active",
+  "sourceSHA256": "faa1a023b4fe7c2a726a9cc2d0c327c82de9ffa5faffdc5bc35223c6ffa67f00",
+  "physicsSteps": 6478,
+  "wallMs": 10540.784769,
+  "physicsMs": 8854.862716999893,
+  "observationMs": 688.8782329999883,
+  "controllerMs": 159.71721700002013,
+  "unclassifiedMs": 837.3266020000988,
+  "observations": 2178,
+  "controllers": 2178,
+  "stepsPerSecond": 614.5652474616048,
+  "aggregateRealtime": 10.242754124360081,
+  "note": "Instrumented CPU measurement on this host. Not a browser replay FPS measurement or a reference-laptop guarantee."
+}

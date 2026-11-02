@@ -1,0 +1,20 @@
+{
+  "format": "jenga-evolutionary-machine",
+  "version": 2,
+  "mode": "balancer",
+  "genes": [
+    1,
+    0.3413658812060021,
+    0,
+    0.045117291691713024,
+    0.7199234951403923,
+    1,
+    0.5,
+    0.5,
+    0.5,
+    0.5
+  ],
+  "seed": 42,
+  "terrain": "rolling",
+  "duration": 12
+}

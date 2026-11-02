@@ -1,0 +1,3 @@
+const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto'),root=path.resolve(__dirname,'..'),files=[];
+function walk(dir){for(const name of fs.readdirSync(dir).sort()){const f=path.join(dir,name);if(fs.statSync(f).isDirectory())walk(f);else if(/\.(js|cjs)$/.test(name)&&name!=='build-info.js')files.push(f);}}
+walk(path.join(root,'js'));const h=crypto.createHash('sha256');for(const f of files){h.update(path.relative(root,f));h.update('\0');h.update(fs.readFileSync(f));}const sourceSHA256=h.digest('hex');fs.writeFileSync(path.join(root,'js/build-info.js'),'globalThis.LabBuild=Object.freeze('+JSON.stringify({version:'1.0.0',sourceSHA256})+');\n');console.log(sourceSHA256);

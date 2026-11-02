@@ -1,0 +1,6 @@
+const assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm'),L=require('../js/node-runtime.cjs');
+// Renderer must handle real separate-foot V3 shins as well as the historical fused feet.
+const gradient={addColorStop(){}},context=new Proxy({createLinearGradient(){return gradient;}},{get(target,key){return key in target?target[key]:(()=>{});}}),canvas={width:800,height:400,getBoundingClientRect(){return{width:800,height:400};},getContext(){return context;}};
+const root=vm.createContext({MachineLab:L.Core});vm.runInContext(fs.readFileSync(require('node:path').join(__dirname,'../js/ui/renderer.js'),'utf8'),root);
+for(const mode of ['walker','car','jumper','balancer'])for(const version of [2,3]){const c=L.Contracts.config({mode,walkerVersion:version,controller:'neural',trainCount:1,duration:1}),individual=L.Search.initial(c,L.Search.fresh())[0],e=L.Environment.create(c,individual,c.seedSets.train[0]);for(let i=0;i<30&&!e.sim.done;i++)L.Environment.step(e);const snapshot=root.MachineView.snapshot(e.sim);assert(snapshot.bodies.length);for(const small of [false,true])assert.doesNotThrow(()=>root.MachineView.render(canvas,snapshot,{small}));}
+console.log('Canvas renderer handles articulated V3 feet, historical fused feet and all four tasks at both sizes.');
